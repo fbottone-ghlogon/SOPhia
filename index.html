@@ -1,49 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SOPhia Chatbot</title>
+
+  <!-- Dialogflow Messenger SDK -->
+  <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f5f5f5;
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
       color: #333;
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
+
     h1 {
-      margin-top: 20px;
-    }
-    p {
+      text-align: center;
       margin-bottom: 40px;
     }
-    /* Position the chatbot in the bottom-right corner */
+
+    /* Optional: customize the chat button */
     df-messenger {
-      --df-messenger-bot-message: #e0e0e0;
-      --df-messenger-user-message: #1976d2;
-      --df-messenger-font-color: white;
-      --df-messenger-chat-background-color: #fafafa;
-      position: fixed;
-      bottom: 16px;
-      right: 16px;
+      --df-messenger-bot-message: #e6f0ff;
+      --df-messenger-user-message: #d1ffd1;
+      --df-messenger-font-color: #000;
+      --df-messenger-chat-background-color: #fff;
+      --df-messenger-button-titlebar-color: #0055cc;
     }
   </style>
 </head>
 <body>
-  <h1>Welcome to SOPhia</h1>
-  <p>This page hosts the SOP Assistant chatbot.</p>
 
-  <!-- Dialogflow Messenger embed -->
-  <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+  <h1>Welcome to SOPhia</h1>
+  <p style="text-align:center;">Ask me about SOPs and I’ll help you find what you need.</p>
+
+  <!-- Dialogflow Messenger widget -->
   <df-messenger
-    project-id="my-project-93992-sops"
-    agent-id="4bc4346d-8299-4c3a-920c-5317e709cd83"
+    chat-title="SOPhia"
+    agent-id="projects/my-project-93992-sops/locations/global/agents/4bc4346d-8299-4c3a-920c-5317e709cd83"
     language-code="en">
-    <df-messenger-chat-bubble
-      chat-title="SOPhia Assistant">
-    </df-messenger-chat-bubble>
   </df-messenger>
+
 </body>
 </html>
